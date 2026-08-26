@@ -1,0 +1,105 @@
+[
+  {
+    "id": "deus-esta-perto",
+    "title": "Deus Está Perto de Nós",
+    "artist": "Gateway Worship",
+    "youtube_url": "https://youtube.com/watch?v=VIDEO_ID_AQUI",
+    "duration_seconds": 266,
+    "bpm": 92,
+    "key": "G",
+    "tuning": "Standard",
+    "difficulty": "Fácil",
+    "status": "learning",
+    "practice_minutes": 12,
+    "max_bpm": 72,
+    "mastered_sections": ["INTRO"],
+    "last_practice": "2026-08-12T00:00:00Z",
+    "sections": [
+      {
+        "name": "INTRO",
+        "start": 0,
+        "end": 30,
+        "lines": [
+          { "time": 0, "chord": "G", "text": "(Intro - 4 tempos)" },
+          { "time": 8, "chord": "D", "text": "(palm mutes)" },
+          { "time": 16, "chord": "Em", "text": "(subida)" },
+          { "time": 24, "chord": "C", "text": "(resolução)" }
+        ]
+      },
+      {
+        "name": "VERSO 1",
+        "start": 30,
+        "end": 65,
+        "lines": [
+          { "time": 30, "chord": "G", "text": "Eu tentei te encontrar" },
+          { "time": 40, "chord": "D", "text": "Mas você não estava lá" },
+          { "time": 50, "chord": "Em", "text": "Então eu aprendi" },
+          { "time": 58, "chord": "C", "text": "Que o tempo só pertence a Deus" }
+        ]
+      },
+      {
+        "name": "REFRÃO",
+        "start": 65,
+        "end": 105,
+        "lines": [
+          { "time": 65, "chord": "G", "text": "Deus está perto de nós" },
+          { "time": 75, "chord": "D", "text": "Mesmo quando não vemos" },
+          { "time": 85, "chord": "Em", "text": "Ele ouve o nosso clamor" },
+          { "time": 95, "chord": "C", "text": "E nos guia com amor" }
+        ]
+      },
+      {
+        "name": "VERSO 2",
+        "start": 105,
+        "end": 140,
+        "lines": [
+          { "time": 105, "chord": "G", "text": "Nos montes e nos vales" },
+          { "time": 115, "chord": "D", "text": "Na alegria e na dor" },
+          { "time": 125, "chord": "Em", "text": "Sua presença me sustenta" },
+          { "time": 135, "chord": "C", "text": "E me dá paz interior" }
+        ]
+      },
+      {
+        "name": "REFRÃO",
+        "start": 140,
+        "end": 180,
+        "lines": [
+          { "time": 140, "chord": "G", "text": "Deus está perto de nós" },
+          { "time": 150, "chord": "D", "text": "Mesmo quando não vemos" },
+          { "time": 160, "chord": "Em", "text": "Ele ouve o nosso clamor" },
+          { "time": 170, "chord": "C", "text": "E nos guia com amor" }
+        ]
+      },
+      {
+        "name": "SOLO",
+        "start": 180,
+        "end": 215,
+        "lines": [
+          { "time": 180, "chord": "Em", "text": "(Solo - compassos 1-8)" },
+          { "time": 197, "chord": "C", "text": "(compassos 9-16)" },
+          { "time": 207, "chord": "G", "text": "(volta do tema)" }
+        ]
+      },
+      {
+        "name": "PONTE",
+        "start": 215,
+        "end": 245,
+        "lines": [
+          { "time": 215, "chord": "D", "text": "Não temas, eu estou contigo" },
+          { "time": 225, "chord": "Em", "text": "Não temas, eu sou o teu Deus" },
+          { "time": 235, "chord": "C", "text": "Eu te fortaleço" }
+        ]
+      },
+      {
+        "name": "OUTRO",
+        "start": 245,
+        "end": 266,
+        "lines": [
+          { "time": 245, "chord": "G", "text": "Deus está perto..." },
+          { "time": 258, "chord": "D", "text": "...de nós..." },
+          { "time": 265, "chord": "G", "text": "(final)" }
+        ]
+      }
+    ]
+  }
+]

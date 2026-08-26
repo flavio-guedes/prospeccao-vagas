@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HERMES — Painel de Treino de Repertório</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">HERMES</div>
+      <div class="sub">Painel de Treino de Repertório</div>
+    </div>
+    <div class="pills">
+      <span class="pill">MÚSICAS <b id="count-songs">0</b></span>
+      <span class="pill">DOMINADAS <b id="count-mastered">0</b></span>
+      <span class="pill">EM ESTUDO <b id="count-learning">0</b></span>
+      <span class="pill">TEMPO <b id="count-time">0</b> min</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h3>📚 MEU REPERTÓRIO</h3>
+      <input id="song-search" placeholder="Buscar música..." />
+      <div id="song-list" class="song-list"></div>
+      <div class="sidebar-actions">
+        <button class="btn primary" id="btn-add-song">+ Adicionar Música</button>
+      </div>
+    </aside>
+
+    <section class="stage">
+      <div id="player-area" class="player-area">
+        <div class="song-header">
+          <div>
+            <h1 id="song-title">Selecione uma música</h1>
+            <p id="song-artist"></p>
+          </div>
+          <div class="song-meta">
+            <span id="song-bpm" class="meta-badge">-- BPM</span>
+            <span id="song-key" class="meta-badge">TOM: --</span>
+            <span id="song-tuning" class="meta-badge">AFINAÇÃO: --</span>
+            <span id="song-difficulty" class="meta-badge">--</span>
+          </div>
+        </div>
+
+        <div class="video-wrapper">
+          <iframe id="youtube-embed" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <div id="no-audio-msg" class="no-audio-msg hidden">
+            <p>Áudio indisponível para este item.</p>
+            <button class="btn" id="btn-upload-audio">Usar áudio local</button>
+            <input type="file" id="audio-upload" accept="audio/*" class="hidden" />
+          </div>
+        </div>
+
+        <div class="progress-row">
+          <button class="btn" id="btn-play">▶ PLAY</button>
+          <button class="btn" id="btn-pause">⏸ PAUSE</button>
+          <button class="btn" id="btn-loop">🔁 LOOP A→B</button>
+          <button class="btn" id="btn-restart">⏮ INÍCIO</button>
+          <span class="time-display"><span id="time-current">0:00</span> / <span id="time-total">0:00</span></span>
+        </div>
+
+        <div class="speed-row">
+          <span class="label">VELOCIDADE</span>
+          <div class="speed-presets">
+            <button class="btn speed" data-speed="0.5">50%</button>
+            <button class="btn speed" data-speed="0.6">60%</button>
+            <button class="btn speed" data-speed="0.7">70%</button>
+            <button class="btn speed" data-speed="0.8">80%</button>
+            <button class="btn speed" data-speed="0.9">90%</button>
+            <button class="btn speed active" data-speed="1.0">100%</button>
+            <button class="btn speed" data-speed="1.1">110%</button>
+          </div>
+          <div class="bpm-controls">
+            <button class="btn" id="bpm-minus5">-5 BPM</button>
+            <button class="btn" id="bpm-minus1">-1 BPM</button>
+            <button class="btn" id="bpm-original">ORIGINAL</button>
+            <button class="btn" id="bpm-plus1">+1 BPM</button>
+            <button class="btn" id="bpm-plus5">+5 BPM</button>
+          </div>
+        </div>
+
+        <div class="waveform-row">
+          <canvas id="waveform" class="waveform"></canvas>
+          <div id="region-a" class="region-marker region-a">A</div>
+          <div id="region-b" class="region-marker region-b">B</div>
+        </div>
+
+        <div class="structure-row">
+          <span class="label">ESTRUTURA</span>
+          <div id="structure-timeline" class="structure-timeline"></div>
+        </div>
+      </div>
+
+      <div class="teleprompter">
+        <div class="tele-header">
+          <h3>🎸 TELEPROMPTER</h3>
+          <div class="tele-controls">
+            <button class="btn" id="btn-tele-auto">AUTO: ON</button>
+            <button class="btn" id="btn-tele-font">FONTE: A+</button>
+            <button class="btn" id="btn-tele-dark">DARK</button>
+            <button class="btn" id="btn-tele-full">⛶ FULL</button>
+          </div>
+        </div>
+        <div id="tele-scroll" class="tele-scroll">
+          <div id="tele-content" class="tele-content"></div>
+        </div>
+      </div>
+
+      <div class="guitar-modes">
+        <div class="mode-tabs">
+          <button class="mode-tab active" data-mode="chord">CIFRA</button>
+          <button class="mode-tab" data-mode="tab">TABLATURA</button>
+          <button class="mode-tab" data-mode="diagram">DIAGRAMA</button>
+          <button class="mode-tab" data-mode="notes">NOTAS</button>
+          <button class="mode-tab" data-mode="simple">SIMPLIFICADO</button>
+        </div>
+        <div id="mode-panel" class="mode-panel">
+          <div id="mode-chord" class="mode-section active">
+            <div class="chord-panel-header">
+              <div id="chord-indicator" class="chord-indicator">Acorde: --</div>
+              <div class="print-row">
+                <button class="btn print" data-print="chord">Imprimir Cifra</button>
+              </div>
+            </div>
+            <div id="chord-view" class="chord-view"></div>
+          </div>
+          <div id="mode-tab" class="mode-section">
+            <div class="chord-panel-header">
+              <div id="tab-indicator" class="chord-indicator">Tablatura</div>
+              <div class="print-row">
+                <button class="btn print" data-print="tab">Imprimir Tablatura</button>
+              </div>
+            </div>
+            <pre id="tab-view" class="tab-view"></pre>
+          </div>
+          <div id="mode-diagram" class="mode-section">
+            <div class="chord-panel-header">
+              <div id="diagram-indicator" class="chord-indicator">Diagramas</div>
+              <div class="print-row">
+                <button class="btn print" data-print="diagram">Imprimir Diagramas</button>
+              </div>
+            </div>
+            <div id="diagram-grid" class="diagram-grid"></div>
+          </div>
+          <div id="mode-notes" class="mode-section">
+            <div id="notes-view" class="notes-view"></div>
+          </div>
+          <div id="mode-simple" class="mode-section">
+            <div id="simple-view" class="simple-view"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-panel">
+        <h3>📊 PROGRESSO DO REPERTÓRIO</h3>
+        <div class="progress-grid">
+          <div class="progress-item">
+            <div class="progress-label">Status</div>
+            <select id="progress-status">
+              <option value="not_started">🔴 Não comecei</option>
+              <option value="learning">🟠 Estou aprendendo</option>
+              <option value="slow">🟡 Consigo tocar devagar</option>
+              <option value="mastered">🟢 Consigo tocar inteira</option>
+              <option value="dominant">⭐ Dominada</option>
+            </select>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">BPM Máximo</div>
+            <input type="number" id="progress-bpm" min="0" max="240" value="0" />
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">Minutos Praticados</div>
+            <input type="number" id="progress-minutes" min="0" value="0" />
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">Seções Dominadas</div>
+            <input type="text" id="progress-sections" placeholder="INTRO, REFRÃO..." />
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">Trechos Difíceis</div>
+            <input type="text" id="progress-difficult" placeholder="SOLO 2:00-2:30..." />
+          </div>
+        </div>
+        <button class="btn primary" id="btn-save-progress">💾 SALVAR PROGRESSO</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>HERMES — Painel de Treino de Repertório • Caso de teste: ENTREMUNDOS - 14/08 - SEXTA</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HERMES — AI Job Intelligence</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">HERMES</div>
+      <div class="sub">AI Job Intelligence</div>
+    </div>
+    <div class="pills">
+      <a class="pill" href="./repertoire/index.html" style="text-decoration:none;color:inherit;">🎸 REPERTÓRIO</a>
+      <span class="pill">NEW <b id="count-new">0</b></span>
+      <span class="pill">HIGH FIT <b id="count-highfit">0</b></span>
+      <span class="pill">REMOTE <b id="count-remote">0</b></span>
+      <span class="pill">APPLICATIONS <b id="count-applied">0</b></span>
+      <span class="pill">INTERVIEWS <b id="count-interviews">0</b></span>
+      <span class="pill">OFFERS <b id="count-offers">0</b></span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="filters">
+      <input id="filter-query" placeholder="Buscar empresa, cargo ou termo..." />
+      <select id="filter-source"><option value="">Todas as fontes</option></select>
+      <select id="filter-status"><option value="">Todos os status</option></select>
+      <select id="filter-priority"><option value="">Todas as prioridades</option></select>
+      <select id="sort">
+        <option value="fit_desc">Fit Score ↓</option>
+        <option value="fit_asc">Fit Score ↑</option>
+        <option value="date_desc">Mais recente</option>
+        <option value="date_asc">Mais antiga</option>
+      </select>
+    </section>
+
+    <section class="overview">
+      <h2>Overview</h2>
+      <div class="grid">
+        <div class="panel"><h3>Total</h3><div id="ov-total" class="big">0</div></div>
+        <div class="panel"><h3>New Today</h3><div id="ov-new" class="big">0</div></div>
+        <div class="panel"><h3>High Fit</h3><div id="ov-highfit" class="big">0</div></div>
+        <div class="panel"><h3>Remote</h3><div id="ov-remote" class="big">0</div></div>
+        <div class="panel"><h3>Applications</h3><div id="ov-applications" class="big">0</div></div>
+        <div class="panel"><h3>Avg Fit</h3><div id="ov-avgfit" class="big">0</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>New Opportunities</h2>
+      <div class="cards" id="cards-new"></div>
+    </section>
+
+    <section class="section">
+      <h2>Top Fit</h2>
+      <div class="cards" id="cards-topfit"></div>
+    </section>
+
+    <section class="section">
+      <h2>Application Pipeline</h2>
+      <div class="cards" id="cards-pipeline"></div>
+    </section>
+
+    <section class="market-intel">
+      <h2>Market Intelligence</h2>
+      <div class="grid">
+        <div class="panel"><h3>Top Roles</h3><ul id="top-roles"></ul></div>
+        <div class="panel"><h3>Top Skills</h3><ul id="top-skills"></ul></div>
+        <div class="panel"><h3>Top Sources</h3><ul id="top-sources"></ul></div>
+        <div class="panel"><h3>Remote / Local</h3><ul id="remote-breakdown"></ul></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>History</h2>
+      <div class="panel"><pre id="history" class="mono"></pre></div>
+    </section>
+
+    <section class="section">
+      <h2>Sources</h2>
+      <div class="panel"><pre id="sources" class="mono"></pre></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>HERMES — AI Job Intelligence OS • Dados locais • Atualização recorrente</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

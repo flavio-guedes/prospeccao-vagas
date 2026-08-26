@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career OS — Flávio Guedes (Local)</title>
+<style>
+:root{--bg:#f5f6fb;--bg2:#eceef8;--bg3:#e4e7f4;--bg4:#d8dced;--surface:#ffffff;--surface2:#f7f8fe;--surface3:#eff1fa;--border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.11);--border3:rgba(0,0,0,0.17);--text:#0f1120;--text2:#3a3f60;--text3:#737aa0;--text4:#a8aec8;--blue:#2563eb;--blue2:#3b82f6;--blue-dim:rgba(37,99,235,0.1);--violet:#7c3aed;--violet2:#8b5cf6;--violet-dim:rgba(124,58,237,0.1);--amber:#d97706;--amber2:#f59e0b;--amber-dim:rgba(217,119,6,0.1);--green:#059669;--green2:#10b981;--green-dim:rgba(5,150,105,0.1);--coral:#e11d48;--coral-dim:rgba(225,29,72,0.1);--cyan:#0891b2;--cyan-dim:rgba(8,145,178,0.1);--r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:22px;--r-2xl:28px;--sh:0 2px 12px rgba(0,0,0,0.08);--sh-lg:0 6px 32px rgba(0,0,0,0.12);--font:'DM Sans',sans-serif;--display:'Syne',sans-serif;--mono:'DM Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,select,input,textarea{font-family:var(--font)}
+.ambient{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(140px);opacity:0.10}
+.a1{width:700px;height:400px;background:radial-gradient(circle,#3b82f6,transparent 70%);top:-120px;right:-120px}
+.a2{width:500px;height:500px;background:radial-gradient(circle,#7c3aed,transparent 70%);bottom:-100px;left:-100px}
+.a3{width:350px;height:350px;background:radial-gradient(circle,#0891b2,transparent 70%);top:40%;left:30%;opacity:0.05}
+body>*:not(.ambient){position:relative;z-index:1}
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 40px}
+.header-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.header-brand{font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--violet);opacity:.8}
+.header-title{font-family:var(--display);font-size:18px;font-weight:800;color:var(--text);letter-spacing:-0.02em}
+.header-title em{font-style:normal;color:var(--violet)}
+.header-sub{display:none}
+.header-badges{display:flex;gap:6px;flex-wrap:wrap}
+.hbadge{font-size:10px;font-weight:500;padding:4px 11px;border-radius:99px;border:1px solid var(--border2);color:var(--text3);background:rgba(0,0,0,0.03);letter-spacing:0.04em}
+.hbadge.live{border-color:rgba(5,150,105,0.35);color:var(--green);background:var(--green-dim)}
+.nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;height:58px}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 28px;display:flex;gap:2px;height:100%;align-items:center}
+.tab{display:flex;align-items:center;gap:7px;padding:8px 16px;height:100%;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text3);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;margin-bottom:-1px;position:relative;white-space:nowrap}
+.tab svg{width:14px;height:14px;flex-shrink:0}
+.tab:hover{color:var(--text2)}
+.tab.active{color:var(--violet);border-bottom-color:var(--violet)}
+.tab .tcount{font-size:9px;background:var(--violet);color:#fff;border-radius:99px;padding:1px 6px;font-weight:700}
+.nav-sep{width:1px;height:20px;background:var(--border2);margin:0 4px;flex-shrink:0}
+.section{display:none;max-width:1300px;margin:0 auto;padding:28px 28px 80px;animation:fadeIn .25s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.card{background:var(--surface);border-radius:var(--r-xl);border:1px solid var(--border);padding:22px;margin-bottom:16px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.card-accent::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--violet),var(--cyan))}
+.card-title{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--text2);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card-title svg{width:14px;height:14px;color:var(--violet2)}
+.sec-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.sec-title{font-family:var(--display);font-size:18px;font-weight:800;color:var(--text);letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+.sec-title svg{width:18px;height:18px;color:var(--violet2)}
+.sec-sub{font-size:12px;color:var(--text3);margin-top:3px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:var(--r-sm);border:1.5px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;font-size:12px;font-weight:500;transition:all .18s;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.btn:hover{background:var(--surface2);border-color:var(--border3);color:var(--text);transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,0.1)}
+.btn svg{width:13px;height:13px;flex-shrink:0}
+.btn-primary{background:var(--violet);border-color:var(--violet);color:#fff}
+.btn-primary:hover{background:#7c3aed;border-color:#7c3aed;color:#fff}
+.btn-green{background:var(--green);border-color:var(--green);color:#fff}
+.btn-green:hover{background:#059669;border-color:#059669;color:#fff}
+.badge{font-size:10px;font-weight:600;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.b-gray{background:rgba(0,0,0,0.04);color:var(--text2);border:1px solid var(--border2)}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:18px 16px;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden;transition:border-color .2s,box-shadow .2s;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.kpi.k-blue::after{background:var(--blue)}.kpi.k-violet::after{background:var(--violet)}.kpi.k-green::after{background:var(--green)}.kpi.k-amber::after{background:var(--amber)}.kpi.k-cyan::after{background:var(--cyan)}
+.kpi-n{font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1}
+.kn-blue{color:var(--blue2)}.kn-violet{color:var(--violet2)}.kn-green{color:var(--green2)}.kn-amber{color:var(--amber2)}.kn-cyan{color:#22d3ee}
+.kpi-l{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-top:4px}
+.kpi-trend{font-size:10px;color:var(--text3);margin-top:2px}
+.insights-list{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto}
+.insight-item{padding:12px 14px;border-radius:var(--r-md);border-left:3px solid;background:var(--surface2);font-size:12px;line-height:1.6;color:var(--text2)}
+.ins-violet{border-color:var(--violet);background:rgba(124,58,237,0.04)}
+.ins-blue{border-color:var(--blue);background:rgba(37,99,235,0.04)}
+.ins-green{border-color:var(--green);background:rgba(5,150,105,0.04)}
+.ins-amber{border-color:var(--amber2);background:rgba(217,119,6,0.04)}
+.funnel-wrap{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.funnel-row{display:flex;align-items:center;gap:10px}
+.funnel-label{font-size:11px;color:var(--text2);width:90px;flex-shrink:0}
+.funnel-bar-wrap{flex:1;height:20px;background:var(--bg3);border-radius:99px;overflow:hidden}
+.funnel-bar{height:100%;border-radius:99px;display:flex;align-items:center;padding-left:10px;font-size:10px;font-weight:600;color:#fff;min-width:24px;transition:width .6s ease}
+.funnel-count{font-size:11px;font-weight:600;width:24px;text-align:right;flex-shrink:0}
+.news-feed{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto}
+.news-item{display:flex;gap:12px;padding:11px 12px;border-radius:var(--r-md);background:var(--surface2);border:1px solid var(--border);transition:border-color .15s,box-shadow .15s;cursor:pointer;text-decoration:none}
+.news-item:hover{border-color:var(--border2);box-shadow:var(--sh);background:var(--surface)}
+.news-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.news-source{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:3px}
+.news-headline{font-size:12px;color:var(--text);line-height:1.45;font-weight:500}
+.news-meta{font-size:10px;color:var(--text3);margin-top:3px;display:flex;gap:8px;align-items:center}
+.news-loading{display:flex;align-items:center;gap:10px;padding:16px;color:var(--text3);font-size:12px}
+.news-spinner{width:14px;height:14px;border:2px solid var(--border2);border-top-color:var(--violet);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.insight-meta{font-size:10px;color:var(--text3);margin-top:4px;line-height:1.45}
+.insight-actions{display:flex;gap:6px;margin-top:8px}
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mission-block{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px}
+.mission-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.mission-value{font-size:13px;font-weight:700;color:var(--text);line-height:1.35}
+.mission-meta{font-size:12px;color:var(--text2);line-height:1.6}
+.mission-progress{height:8px;background:var(--bg3);border-radius:99px;overflow:hidden;margin-top:10px;border:1px solid var(--border)}
+.mission-progress-bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--violet));width:0;transition:width .6s ease}
+.mission-progress-label{font-size:10px;color:var(--text3);margin-top:6px;font-weight:600}
+.quick-add{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.quick-add input{flex:1;min-width:180px}
+.finput{font-family:var(--font);font-size:13px;padding:10px 14px;border:1.5px solid var(--border2);border-radius:var(--r-sm);background:var(--bg2);color:var(--text);outline:none;transition:all .2s}
+.finput:focus{border-color:var(--violet);background:var(--surface);box-shadow:0 0 0 3px rgba(124,58,237,0.1)}
+.finput::placeholder{color:var(--text4)}
+.empty-state{text-align:center;padding:60px 20px;color:var(--text3)}
+.today-card{background:linear-gradient(135deg,rgba(124,58,237,0.06),rgba(37,99,235,0.05))}
+.today-list{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.today-item{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);transition:border-color .2s,box-shadow .2s,transform .15s}
+.today-item:hover{border-color:var(--border2);box-shadow:var(--sh);transform:translateY(-1px)}
+.today-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(0,0,0,0.06)}
+.today-body{flex:1;min-width:0}
+.today-title{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.today-meta{font-size:11px;color:var(--text3);line-height:1.55}
+.today-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.today-empty{font-size:12px;color:var(--text3);padding:6px 2px}
+.ctrl-panel{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--r-lg);margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.06);overflow:hidden}
+.ctrl-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:9px 14px}
+.ctrl-row+.ctrl-row{border-top:1px solid var(--border)}
+.ctrl-row-bottom{background:rgba(0,0,0,0.015);padding:8px 14px}
+.ctrl-lbl{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text4);flex-shrink:0;margin-right:2px;display:flex;align-items:center;gap:4px;min-width:52px}
+.ctrl-chips{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.ctrl-sep{width:1px;height:20px;background:var(--border2);margin:0 4px;flex-shrink:0}
+.c-chip{padding:4px 11px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text3);font-size:10.5px;font-weight:500;cursor:pointer;transition:all .13s;white-space:nowrap;font-family:var(--font);display:inline-flex;align-items:center;gap:4px}
+.c-chip:hover{border-color:var(--border3);color:var(--text)}
+.c-chip.active{background:var(--bg3);border-color:var(--border3);color:var(--text);font-weight:600}
+.sub-chip{padding:3px 10px;border-radius:16px;border:1.5px solid var(--border);background:transparent;color:var(--text3);font-size:10px;font-weight:500;cursor:pointer;transition:all .13s;white-space:nowrap;font-family:var(--font)}
+.sub-chip:hover{border-color:var(--border3);color:var(--text)}
+.sub-chip.active{background:var(--bg3);border-color:var(--border2);color:var(--text);font-weight:600}
+.mode-tabs{display:flex;gap:2px;background:var(--bg2);border-radius:var(--r-md);padding:3px;width:fit-content;margin-bottom:0}
+.mode-tab{padding:7px 16px;border-radius:10px;border:none;background:transparent;color:var(--text3);font-size:11.5px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--display);letter-spacing:.04em}
+.mode-tab.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,0.1)}
+.chip-filter{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text3);font-size:11px;font-weight:500;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:var(--font);display:inline-flex;align-items:center;gap:4px}
+.chip-filter:hover{border-color:var(--blue2);color:var(--blue)}
+.chip-filter.chip-act{background:rgba(37,99,235,0.1);border-color:rgba(37,99,235,0.35);color:var(--blue);font-weight:600}
+.email-table{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin-top:14px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.email-row{display:grid;grid-template-columns:2fr 1fr 1fr 90px 1.2fr 1fr 90px;gap:0;border-bottom:1px solid var(--border);padding:10px 12px;align-items:center}
+.email-head{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);background:var(--bg2);padding:9px 12px;border-bottom:1px solid var(--border)}
+.email-cell{font-size:11.5px;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.email-name{font-weight:600;color:var(--text)}
+.ibt{width:26px;height:26px;border-radius:var(--r-sm);border:1px solid var(--border);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;color:var(--text3)}
+.ibt:hover{background:var(--surface2);color:var(--text)}
+.ibt svg{width:12px;height:12px}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+</style>
+</head>
+<body>
+<div class="ambient a1"></div>
+<div class="ambient a2"></div>
+<div class="ambient a3"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="header-brand">◆ Career OS</div>
+      <div class="header-title">Flávio Guedes <em>/ Career OS</em></div>
+    </div>
+    <div class="header-badges" id="header-badges">
+      <div class="hbadge live">Insights ao vivo</div>
+      <div class="hbadge" id="hb-total">0 candidaturas</div>
+      <div class="hbadge">3 mercados</div>
+      <div class="hbadge">Job Radar</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav no-print">
+  <div class="nav-inner">
+    <button class="tab" onclick="showTab('busca')">
+      <i data-lucide="search"></i> Buscas
+    </button>
+    <div class="nav-sep"></div>
+    <button class="tab" onclick="showTab('emails')">
+      <i data-lucide="mail"></i> E-mails
+    </button>
+    <div class="nav-sep"></div>
+    <button class="tab" onclick="showTab('pitches')">
+      <i data-lucide="send"></i> Pitches
+    </button>
+    <div class="nav-sep"></div>
+    <button class="tab" onclick="showTab('crm')">
+      <i data-lucide="users"></i> CRM
+      <span class="tcount" id="crm-count">0</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="tab" onclick="showTab('historico')">
+      <i data-lucide="clock"></i> Histórico
+    </button>
+    <div class="nav-sep"></div>
+    <button class="tab" onclick="showTab('cv')">
+      <i data-lucide="file-text"></i> CV com IA
+    </button>
+  </div>
+</nav>
+
+<section id="tab-busca" class="section active">
+  <div class="sec-header">
+    <div>
+      <div class="sec-title"><i data-lucide="search"></i> Buscas</div>
+      <div class="sec-sub">Monte a busca e abra no LinkedIn</div>
+    </div>
+    <button class="btn btn-primary" onclick="openLinkedIn()">Abrir no LinkedIn</button>
+  </div>
+
+  <div class="ctrl-panel">
+    <div class="ctrl-row">
+      <span class="ctrl-lbl"><i data-lucide="map-pin" style="width:11px;height:11px"></i> Estado</span>
+      <div class="ctrl-chips" id="geo-state-chips">
+        <button class="c-chip active" onclick="setGeo(this,'')">Todos</button>
+        <button class="c-chip" onclick="setGeo(this,'remoto')">🌐 Remoto</button>
+        <button class="c-chip" onclick="setGeo(this,'rj')">RJ</button>
+        <button class="c-chip" onclick="setGeo(this,'sp')">SP</button>
+      </div>
+    </div>
+    <div class="ctrl-row">
+      <span class="ctrl-lbl"><i data-lucide="briefcase" style="width:11px;height:11px"></i> Cargo</span>
+      <div class="ctrl-chips" id="role-chips"></div>
+    </div>
+    <div class="ctrl-row ctrl-row-bottom">
+      <span class="ctrl-lbl">Período</span>
+      <div class="ctrl-chips" id="period-chips">
+        <button class="c-chip" onclick="setPeriod(this,'r86400')">24h</button>
+        <button class="c-chip active" onclick="setPeriod(this,'')">Livre</button>
+      </div>
+      <div class="ctrl-sep"></div>
+      <span class="ctrl-lbl">Modalidade</span>
+      <div class="ctrl-chips" id="wt-chips">
+        <button class="c-chip active" onclick="setWT(this,'')">Todos</button>
+        <button class="c-chip" onclick="setWT(this,'2')">Remoto</button>
+        <button class="c-chip" onclick="setWT(this,'1')">Presencial</button>
+        <button class="c-chip" onclick="setWT(this,'3')">Híbrido</button>
+      </div>
+      <div class="ctrl-sep"></div>
+      <span class="ctrl-lbl">Tipo</span>
+      <div class="ctrl-chips" id="jt-chips">
+        <button class="c-chip active" onclick="setJT(this,'')">Todos</button>
+        <button class="c-chip" onclick="setJT(this,'F')">CLT</button>
+        <button class="c-chip" onclick="setJT(this,'C')">PJ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-accent">
+    <div class="card-title">Construção da busca</div>
+    <div id="build-hint" style="font-size:12px;color:var(--text3);line-height:1.6">Selecione cargo e local para montar a query.</div>
+    <div id="build-query" style="font-family:var(--mono);font-size:12px;color:var(--text);margin-top:8px;display:none"></div>
+  </div>
+</section>
+
+<section id="tab-emails" class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-title"><i data-lucide="mail"></i> E-mails</div>
+      <div class="sec-sub">Contatos e lotes CSV</div>
+    </div>
+    <button class="btn btn-green" onclick="exportEmails()">Exportar CSV</button>
+  </div>
+  <div class="dash-body-3" style="margin-bottom:18px">
+    <div class="card card-accent">
+      <div class="card-title">Categoria</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button class="btn btn-sm" onclick="setEmailCategory('MARKETING')">MARKETING</button>
+        <button class="btn btn-sm" onclick="setEmailCategory('PRODUTO')">PRODUTO</button>
+        <button class="btn btn-sm" onclick="setEmailCategory('DESIGN')">DESIGN</button>
+        <button class="btn btn-sm" onclick="setEmailCategory('IA')">IA / TECH</button>
+        <button class="btn btn-sm btn-primary" onclick="setEmailCategory('TODOS')">TODOS</button>
+      </div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-title">Estatísticas</div>
+      <div id="email-stats" style="font-size:12px;color:var(--text2);line-height:1.7">Selecione uma categoria.</div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-title">Ações</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button class="btn btn-sm btn-green" onclick="generateEmailBatch()">Gerar lote CSV</button>
+        <button class="btn btn-sm" onclick="openJobRadar()">Abrir Job Radar</button>
+      </div>
+    </div>
+  </div>
+  <div class="card card-accent">
+    <div class="card-title" style="justify-content:space-between">
+      <span style="display:flex;align-items:center;gap:8px"><i data-lucide="list"></i> Contatos</span>
+      <span class="badge b-gray" id="email-count-badge">0</span>
+    </div>
+    <div id="emails-table-wrap"></div>
+  </div>
+</section>
+
+<section id="tab-pitches" class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-title"><i data-lucide="send"></i> Pitches</div>
+      <div class="sec-sub">Mensagens por canal</div>
+    </div>
+  </div>
+  <div class="card card-accent">
+    <div class="card-title">Resumo</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">Use a aba Buscas para encontrar oportunidades e gere mensagens personalizadas.</div>
+  </div>
+</section>
+
+<section id="tab-crm" class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-title"><i data-lucide="users"></i> CRM</div>
+      <div class="sec-sub">Pipeline de candidaturas</div>
+    </div>
+    <button class="btn btn-primary" onclick="openModal()"><i data-lucide="plus"></i> Nova</button>
+  </div>
+  <div class="crm-stats" id="crm-kpis"></div>
+  <div class="quick-add">
+    <input class="finput" id="qa-company" placeholder="Empresa">
+    <input class="finput" id="qa-role" placeholder="Cargo">
+    <select class="finput" id="qa-ch">
+      <option value="li">LinkedIn</option>
+      <option value="wa">WhatsApp</option>
+      <option value="em">E-mail</option>
+      <option value="portal">Portal</option>
+    </select>
+    <button class="btn btn-primary" onclick="quickAdd()"><i data-lucide="plus"></i> Adicionar rápido</button>
+  </div>
+  <div id="crm-wrap" style="margin-top:14px"></div>
+</section>
+
+<section id="tab-historico" class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-title"><i data-lucide="clock"></i> Histórico</div>
+      <div class="sec-sub">Registro de envios</div>
+    </div>
+  </div>
+  <div id="historico-wrap"></div>
+</section>
+
+<section id="tab-cv" class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-title"><i data-lucide="file-text"></i> CV com IA</div>
+      <div class="sec-sub">Adaptação rápida</div>
+    </div>
+  </div>
+  <div class="card card-accent">
+    <div class="card-title">Resumo</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">Use o campo abaixo para colar a descrição da vaga e gere um CV direcionado.</div>
+    <div class="field" style="margin-top:10px">
+      <label class="flabel">Descrição da vaga</label>
+      <textarea class="ftextarea" id="cv-kw" rows="4" placeholder="Cole requisitos, responsabilidades e palavras-chave..."></textarea>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:10px">
+      <button class="btn btn-primary" onclick="generateCV()"><i data-lucide="sparkles"></i> Gerar resumo adaptado</button>
+      <button class="btn" onclick="copyCV()"><i data-lucide="copy"></i> Copiar</button>
+    </div>
+    <div id="cv-notes" style="margin-top:10px;font-size:12px;color:var(--text2);line-height:1.7"></div>
+  </div>
+</section>
+
+<script>
+/* ╔═══════════════════════════════════════════════════════╗
+   ║  CAREER OS LOCAL — Flávio Guedes                      ║
+   ╚═══════════════════════════════════════════════════════╝ */
+
+/* ─── STATE ─── */
+let geoState='';
+let period='';
+let wt='';
+let jt='';
+let roles=new Set();
+const ROLE_PRESETS=['Head de Marketing','Gerente de Marketing','Diretor de Arte','Creative Director','Product Manager','Product Owner','Product Designer','UX Designer','UI Designer','PMM','AI Product Manager','Growth PM','Content Manager','Social Media','Brand Manager'];
+let emailDB=JSON.parse(localStorage.getItem('cos_emails')||'null')||[
+  {company:'Nubank',role:'Product Manager',location:'Remoto',date:'2026-08-15',url:'https://example.com/nubank-pm',source:'LinkedIn Jobs',email:'recrutamento@nubank.com',contact_type:'E-mail público',area:'PRODUTO',category:'PRODUTO',firstname:'Equipe',lastname:'Nubank'},
+  {company:'Totvs',role:'Product Marketing Manager',location:'São Paulo',date:'2026-08-14',url:'https://example.com/totvs-pmm',source:'LinkedIn Jobs',email:'gente@totvs.com',contact_type:'E-mail público',area:'PRODUTO',category:'PRODUTO',firstname:'Equipe',lastname:'Totvs'},
+  {company:'Gympass',role:'UX Designer',location:'Remoto',date:'2026-08-14',url:'https://example.com/gympass-ux',source:'Gupy',email:'people@nubank.com',contact_type:'E-mail público',area:'DESIGN',category:'DESIGN',firstname:'Equipe',lastname:'Gympass'},
+  {company:'C6 Bank',role:'Creative Director',location:'São Paulo',date:'2026-08-13',url:'https://example.com/c6-creative',source:'LinkedIn Jobs',email:'recrutamento@c6bank.com',contact_type:'E-mail público',area:'DESIGN',category:'DESIGN',firstname:'Equipe',lastname:'C6 Bank'},
+  {company:'Meli',role:'Marketing Manager',location:'Remoto',date:'2026-08-13',url:'https://example.com/meli-mkt',source:'LinkedIn Jobs',email:'rh@mercadolivre.com',contact_type:'E-mail público',area:'MARKETING',category:'MARKETING',firstname:'Equipe',lastname:'Meli'},
+  {company:'BeHive',role:'AI Product Manager',location:'Remoto',date:'2026-08-12',url:'https://example.com/behive-ai-pm',source:'LinkedIn Jobs',email:'jobs@behive.ai',contact_type:'E-mail público',area:'IA/TECH',category:'IA',firstname:'Equipe',lastname:'BeHive'}
+];
+let emailCategory='TODOS';
+let crmDB=[];
+
+/* ─── HELPERS ─── */
+function gv(id){ return (document.getElementById(id)?.value||'').trim(); }
+function sv(id,v){ const e=document.getElementById(id); if(e) e.value=v||''; }
+function now(){ return new Date().toLocaleDateString('pt-BR'); }
+function tsNow(){ return Date.now(); }
+function daysBetween(ts){ return Math.floor((Date.now()-ts)/(1000*60*60*24)); }
+function saveEmails(){ localStorage.setItem('cos_emails', JSON.stringify(emailDB)); }
+function loadDB(){ crmDB = JSON.parse(localStorage.getItem('cos_crm')||'[]'); }
+function saveDB(){ localStorage.setItem('cos_crm', JSON.stringify(crmDB)); }
+function copyText(text, btn){
+  navigator.clipboard.writeText(text).then(()=>{
+    if(!btn) return;
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i data-lucide="check" style="width:12px;height:12px"></i>';
+    lucide.createIcons();
+    setTimeout(()=>{ btn.innerHTML=orig; lucide.createIcons(); }, 1800);
+  });
+}
+
+/* ─── TABS ─── */
+function showTab(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  document.querySelector(`.tab[onclick="showTab('${id}')\"]`).classList.add('active');
+  if(id==='busca') renderBuild();
+  if(id==='emails'){ renderEmails(); updateEmailStats(); }
+  if(id==='crm'||id==='historico') renderCRM();
+}
+
+/* ─── SEARCH BUILDER ─── */
+function setGeo(btn,state){
+  geoState=state;
+  document.querySelectorAll('#geo-state-chips .c-chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  renderBuild();
+}
+function setPeriod(btn,val){ period=val; document.querySelectorAll('#period-chips .c-chip').forEach(c=>c.classList.remove('active')); btn.classList.add('active'); renderBuild(); }
+function setWT(btn,val){ wt=val; document.querySelectorAll('#wt-chips .c-chip').forEach(c=>c.classList.remove('active')); btn.classList.add('active'); renderBuild(); }
+function setJT(btn,val){ jt=val; document.querySelectorAll('#jt-chips .c-chip').forEach(c=>c.classList.remove('active')); btn.classList.add('active'); renderBuild(); }
+function toggleRole(name,btn){
+  if(roles.has(name)){ roles.delete(name); btn.classList.remove('active'); }
+  else { roles.add(name); btn.classList.add('active'); }
+  renderBuild();
+}
+function renderRoles(){
+  const el=document.getElementById('role-chips'); if(!el) return;
+  el.innerHTML=ROLE_PRESETS.map(r=>`<button class="c-chip" onclick="toggleRole('${r}',this)">${r}</button>`).join('');
+}
+function buildQuery(){
+  const parts=[...roles];
+  const q=parts.length ? parts.join(' OR ') : '';
+  const loc=geoState==='remoto'?'Brasil':geoState==='sp'?'São Paulo':geoState==='rj'?'Rio de Janeiro':'Brasil';
+  const geoId=geoState==='sp'?'100446943':geoState==='rj'?'102676203':'106057199';
+  const wtParam=geoState==='remoto'?'2':wt;
+  let url='https://www.linkedin.com/jobs/search/?keywords='+encodeURIComponent(q)+'&location='+encodeURIComponent(loc)+'&geoId='+geoId+'&refresh=true';
+  if(period) url+='&f_TPR='+period;
+  if(wtParam) url+='&f_WT='+wtParam;
+  if(jt) url+='&f_JT='+jt;
+  return {q,url};
+}
+function renderBuild(){
+  renderRoles();
+  const {q,url}=buildQuery();
+  const hint=document.getElementById('build-hint');
+  const box=document.getElementById('build-query');
+  if(!q){ if(hint) hint.textContent='Selecione cargo e local para montar a busca.'; if(box){ box.style.display='none'; box.textContent=''; } return; }
+  if(hint) hint.textContent='Query pronta:';
+  if(box){ box.style.display='block'; box.textContent=url; }
+}
+function openLinkedIn(){
+  const {url}=buildQuery();
+  if(!url){ alert('Selecione ao menos um cargo.'); return; }
+  window.open(url,'_blank');
+}
+
+/* ─── EMAILS ─── */
+function setEmailCategory(cat){ emailCategory=cat; renderEmails(); updateEmailStats(); }
+function updateEmailStats(){
+  const base=emailCategory==='TODOS'?emailDB:emailDB.filter(e=>e.category===emailCategory);
+  const total=base.length; const withEmail=base.filter(e=>e.email).length;
+  const seen=new Set(); const deduped=base.filter(e=>{ const k=(e.company+e.email).toLowerCase(); if(seen.has(k)) return false; seen.add(k); return true; });
+  const dupCount=total-deduped.length; const batchSize=200; const batches=Math.max(1,Math.ceil(deduped.length/batchSize));
+  const stats=document.getElementById('email-stats'); if(stats) stats.innerHTML=`<div><strong>Total:</strong> ${total}</div><div><strong>Com e-mail:</strong> ${withEmail}</div><div><strong>Duplicatas:</strong> ${dupCount}</div><div><strong>Lotes CSV:</strong> ${batches}</div><div style="font-size:10px;color:var(--text3);margin-top:6px">Cada lote exporta até ${batchSize} contatos no formato Gmail Mail Merge.</div>`;
+  const badge=document.getElementById('email-count-badge'); if(badge) badge.textContent=total;
+}
+function renderEmails(){
+  const data=emailCategory==='TODOS'?emailDB:emailDB.filter(e=>e.category===emailCategory);
+  const wrap=document.getElementById('emails-table-wrap'); if(!wrap) return;
+  if(!data.length){ wrap.innerHTML='<div class="empty-state"><div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px">Nenhum contato</div><div style="font-size:12px">Use o Job Radar para capturar contatos públicos.</div></div>'; return; }
+  const rows=data.map(e=>`
+    <div class="email-row">
+      <div class="email-cell"><div class="email-name">${e.company}</div><div style="font-size:10px;color:var(--text3)">${e.role}</div></div>
+      <div class="email-cell">${e.area||''}</div>
+      <div class="email-cell">${e.location||''}</div>
+      <div class="email-cell" style="font-family:var(--mono);font-size:10px;color:var(--text3)">${e.date||''}</div>
+      <div class="email-cell" style="font-size:11px;color:var(--text3)">${e.email||''}</div>
+      <div class="email-cell" style="font-size:11px;color:var(--text3)">${e.source||''}</div>
+      <div class="email-cell" style="gap:4px;display:flex">
+        <button class="ibt" onclick="copyText('${(e.email||'').replace(/'/g,"\\'")}')" title="Copiar e-mail"><i data-lucide="copy"></i></button>
+        <button class="ibt" onclick="removeEmail('${e.email||''}')" title="Remover" style="color:var(--coral)"><i data-lucide="trash-2"></i></button>
+      </div>
+    </div>
+  `).join('');
+  wrap.innerHTML=`<div class="email-table"><div class="email-row email-head"><div>Empresa / Cargo</div><div>Área</div><div>Local</div><div>Data</div><div>E-mail</div><div>Fonte</div><div></div></div>${rows}</div>`;
+  lucide.createIcons();
+}
+function removeEmail(email){ if(!email) return; emailDB=emailDB.filter(e=>e.email!==email); saveEmails(); renderEmails(); updateEmailStats(); }
+function generateEmailBatch(){
+  const data=emailCategory==='TODOS'?emailDB:emailDB.filter(e=>e.category===emailCategory);
+  const seen=new Set(); const deduped=[];
+  data.forEach(e=>{ const k=(e.company+e.email).toLowerCase(); if(!seen.has(k)){ seen.add(k); deduped.push(e); } });
+  const batchSize=200; const batches=Math.ceil(deduped.length/batchSize)||1;
+  for(let b=0;b<batches;b++){
+    const slice=deduped.slice(b*batchSize,(b+1)*batchSize);
+    const rows=[['email','firstname','lastname','company','role','area','job_url']];
+    slice.forEach(e=>rows.push([e.email||'',e.firstname||'',e.lastname||'',e.company,e.role,e.area||'',e.url||'']));
+    const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+    const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download=`email-batch-${emailCategory.toLowerCase()}-${String(b+1).padStart(3,'0')}.csv`; a.click();
+    URL.revokeObjectURL(url);
+  }
+}
+function exportEmails(){ generateEmailBatch(); }
+function openJobRadar(){ window.open('/Users/mac/.hermes/job-intelligence/dashboard/job-radar.html','_blank'); }
+
+/* ─── CRM ─── */
+const CH_LABELS={li:'LinkedIn',wa:'WhatsApp',em:'E-mail',portal:'Portal'};
+function loadDB(){ crmDB = JSON.parse(localStorage.getItem('cos_crm')||'[]'); }
+function saveDB(){ localStorage.setItem('cos_crm', JSON.stringify(crmDB)); }
+function updateCount(){ document.getElementById('crm-count').textContent = crmDB.length; document.getElementById('hb-total').textContent = crmDB.length + ' candidaturas'; }
+function quickAdd(){
+  const company=gv('qa-company'), role=gv('qa-role'), ch=document.getElementById('qa-ch')?.value||'li';
+  if(!company&&!role){ alert('Preencha empresa ou cargo.'); return; }
+  crmDB.unshift({ id:Date.now(), company:company||'—', role:role||'—', seg:'', segLabel:'', ch, status:'pendente', date:now(), ts:tsNow(), vagaUrl:'', notes:'', salary:'', history:[{status:'pendente',date:now(),note:'Candidatura criada'}] });
+  saveDB(); updateCount(); renderCRM();
+  document.getElementById('qa-company').value=''; document.getElementById('qa-role').value='';
+}
+function renderCRM(){
+  const q=gv('crm-q').toLowerCase();
+  const filtered=crmDB.filter(e=>!q||(e.company+e.role).toLowerCase().includes(q));
+  const total=crmDB.length, resp=crmDB.filter(e=>e.status==='respondeu').length, entrev=crmDB.filter(e=>e.status==='entrevista').length, oferta=crmDB.filter(e=>e.status==='oferta').length;
+  const taxa=total?Math.round(((resp+entrev+oferta)/total)*100):0;
+  const kpiEl=document.getElementById('crm-kpis'); if(kpiEl) kpiEl.innerHTML=`<div class="kpi k-blue"><div class="kpi-n kn-blue">${total}</div><div class="kpi-l">Total</div></div><div class="kpi k-green"><div class="kpi-n kn-green">${resp}</div><div class="kpi-l">Responderam</div></div><div class="kpi k-amber"><div class="kpi-n kn-amber">${entrev}</div><div class="kpi-l">Entrevistas</div></div><div class="kpi k-violet"><div class="kpi-n kn-violet">${oferta}</div><div class="kpi-l">Ofertas</div></div><div class="kpi k-cyan"><div class="kpi-n" style="color:#22d3ee">${taxa}%</div><div class="kpi-l">Taxa Resposta</div></div>`;
+  const wrap=document.getElementById('crm-wrap');
+  if(!filtered.length){ if(wrap) wrap.innerHTML=`<div class="empty-state"><div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px">${total?'Nenhum resultado':'Nenhuma candidatura ainda'}</div><div style="font-size:12px">${total?'Tente outros filtros':'Clique em Nova para começar'}</div></div>`; return; }
+  const rows=filtered.map(e=>`<div class="email-row"><div class="email-cell"><div class="email-name">${e.company}</div><div style="font-size:10px;color:var(--text3)">${e.role}</div></div><div class="email-cell">${e.segLabel||'—'}</div><div class="email-cell">${CH_LABELS[e.ch]||e.ch}</div><div class="email-cell" style="font-family:var(--mono);font-size:10px;color:var(--text3)">${e.date||''}</div><div class="email-cell" style="font-size:11px;color:var(--text3)">${e.status}</div><div class="email-cell" style="gap:4px;display:flex"><button class="ibt" onclick="alert('Editar: '+${e.id})" title="Editar"><i data-lucide="pencil"></i></button></div></div>`).join('');
+  if(wrap) wrap.innerHTML=`<div class="email-table"><div class="email-row email-head"><div>Empresa / Cargo</div><div>Segmento</div><div>Canal</div><div>Data</div><div>Status</div><div></div></div>${rows}</div>`;
+  lucide.createIcons();
+}
+function openModal(){ alert('Modal de candidatura pode ser adicionado nesta cópia local.'); }
+
+/* ─── HISTÓRICO ─── */
+function renderHistorico(){
+  const wrap=document.getElementById('historico-wrap'); if(!wrap) return;
+  if(!crmDB.length){ wrap.innerHTML='<div class="empty-state"><div style="font-size:12px;font-weight:600;color:var(--text2)">Nenhuma candidatura registrada</div></div>'; return; }
+  wrap.innerHTML=crmDB.slice(0,20).map(e=>`<div class="card" style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px"><div><div style="font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px">${e.company} ${e.vagaUrl?`<a href="${e.vagaUrl}" target="_blank" style="color:var(--violet2);font-size:11px">↗ ver vaga</a>`:''}</div><div style="font-size:12px;color:var(--text2);margin-top:2px">${e.role}</div></div><div style="font-size:11px;color:var(--text3)">${e.date}</div></div><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="badge b-gray">${e.segLabel||'—'}</span><span class="badge b-gray">${CH_LABELS[e.ch]||e.ch}</span><span class="badge b-gray">${e.status}</span></div></div>`).join('');
+}
+
+/* ─── CV RÁPIDO ─── */
+function generateCV(){
+  const kw=gv('cv-kw');
+  const out=document.getElementById('cv-notes');
+  if(!kw){ if(out) out.textContent='Cole a descrição da vaga para gerar um resumo direcionado.'; return; }
+  if(out) out.innerHTML='<div class="news-loading"><div class="news-spinner"></div> Gerando resumo...</div>';
+  setTimeout(()=>{
+    const txt=`Resumo direcionado: Flávio combina Marketing/Criação com IA/Produto. Destaques: direção criativa, campanhas digitais, product marketing, automação e IA aplicada ao marketing. Palavras-chave: ${kw}`;
+    if(out) out.textContent=txt;
+  },600);
+}
+function copyCV(){ const t=document.getElementById('cv-kw')?.value||''; navigator.clipboard.writeText(t).then(()=>alert('CV copiado!')); }
+
+/* ─── INIT ─── */
+function init(){
+  loadDB(); updateCount(); renderCRM(); renderHistorico(); renderBuild(); renderEmails(); updateEmailStats(); lucide.createIcons();
+}
+init();
+</script>
+</body>
+</html>

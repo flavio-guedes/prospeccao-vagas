@@ -1,0 +1,1045 @@
+[
+  {
+    "company": "AI-native startup (remote-first)",
+    "role": "AI Automation Specialist",
+    "location": "Remote - Worldwide",
+    "remote_type": "Remote",
+    "salary": "US$4,000–6,000/mo",
+    "currency": "USD",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Automation%20Specialist&location=Remote",
+    "source": "seed",
+    "published_date": "2026-08-26T23:27:40.178661+00:00",
+    "discovered_date": "2026-08-26T23:27:40.178661+00:00",
+    "notes": "Padrão de mercado confirmado para vagas remotas de automação com IA.",
+    "status": "DISCOVERED",
+    "requirements": [],
+    "skills": [],
+    "matches": [
+      "seniority",
+      "compensation",
+      "ai_automation",
+      "location",
+      "strategic",
+      "skills",
+      "experience",
+      "remote"
+    ],
+    "gaps": [],
+    "opportunity_id": "25532a490f46643d",
+    "status_history": [
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T15:29:18.008547+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:07.648095+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:42.371618+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:09:56.106583+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:20.063263+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:52.583582+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T01:13:23.827335+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T16:21:27.573189+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T03:20:32.805243+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T17:42:00.563014+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-15T19:59:37.808452+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-16T04:20:09.595222+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T02:14:46.228815+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T12:03:57.735739+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T19:39:01.915012+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-18T17:56:08.607755+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T00:31:24.060918+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T19:59:51.250504+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T01:12:34.995736+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T14:25:04.292300+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T20:34:11.379896+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T21:25:44.087258+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T03:35:22.083082+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T09:35:26.054562+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T16:29:52.904771+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T22:29:54.489242+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T04:29:56.482877+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T11:32:34.289655+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T17:50:09.742600+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T23:50:11.237217+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T05:50:13.386468+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T12:15:00.095341+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T20:26:34.164470+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T05:01:04.896588+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T11:44:46.667024+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T17:44:51.517868+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T23:44:57.763664+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T05:49:25.745503+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T11:49:29.066014+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T17:49:31.212995+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T04:15:30.951699+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T14:31:53.495912+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T20:31:57.665123+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T23:27:40.179687+00:00"
+      }
+    ],
+    "fit_score": 88,
+    "priority": "ALTA",
+    "freshness": "NOVÍSSIMA",
+    "scored_at": "2026-08-26T23:27:40.229234+00:00"
+  },
+  {
+    "company": "Creative tech agency (async/remote)",
+    "role": "AI Creative Technologist",
+    "location": "Remote - LATAM / EUA / Europa",
+    "remote_type": "Remote",
+    "salary": "USD 60–110k or EUR equivalent",
+    "currency": "USD",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Creative%20Technologist&location=Remote",
+    "source": "seed",
+    "published_date": "2026-08-26T23:27:40.178661+00:00",
+    "discovered_date": "2026-08-26T23:27:40.178661+00:00",
+    "notes": "Vagas aparecem com frequência em agências e estúdios digitais remotos.",
+    "status": "DISCOVERED",
+    "requirements": [],
+    "skills": [],
+    "matches": [
+      "seniority",
+      "compensation",
+      "location",
+      "strategic",
+      "skills",
+      "experience",
+      "remote"
+    ],
+    "gaps": [],
+    "opportunity_id": "20ab2facf17106c8",
+    "status_history": [
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T15:29:18.008569+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:07.648113+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:42.371649+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:09:56.106612+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:20.063292+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:52.583614+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T01:13:23.827363+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T16:21:27.573205+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T03:20:32.805266+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T17:42:00.563036+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-15T19:59:37.808472+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-16T04:20:09.595242+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T02:14:46.228829+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T12:03:57.735757+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T19:39:01.915055+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-18T17:56:08.607771+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T00:31:24.060948+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T19:59:51.250519+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T01:12:34.995763+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T14:25:04.292510+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T20:34:11.379921+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T21:25:44.087296+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T03:35:22.083098+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T09:35:26.054578+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T16:29:52.904788+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T22:29:54.489259+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T04:29:56.482915+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T11:32:34.289692+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T17:50:09.742631+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T23:50:11.237234+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T05:50:13.386484+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T12:15:00.095357+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T20:26:34.164486+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T05:01:04.896614+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T11:44:46.667044+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T17:44:51.517896+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T23:44:57.763679+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T05:49:25.745519+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T11:49:29.066029+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T17:49:31.213011+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T04:15:30.951736+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T14:31:53.495927+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T20:31:57.665139+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T23:27:40.179720+00:00"
+      }
+    ],
+    "fit_score": 79,
+    "priority": "BOA",
+    "freshness": "NOVÍSSIMA",
+    "scored_at": "2026-08-26T23:27:40.229415+00:00"
+  },
+  {
+    "company": "B2B SaaS / Productivity",
+    "role": "AI Workflow Automation Specialist",
+    "location": "Remote - Worldwide",
+    "remote_type": "Remote",
+    "salary": "US$3,500–6,000/mo",
+    "currency": "USD",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Workflow%20Automation%20Specialist&location=Remote",
+    "source": "seed",
+    "published_date": "2026-08-26T23:27:40.178661+00:00",
+    "discovered_date": "2026-08-26T23:27:40.178661+00:00",
+    "notes": "Alta aderência com integrações, automação e orquestração.",
+    "status": "DISCOVERED",
+    "requirements": [],
+    "skills": [],
+    "matches": [
+      "seniority",
+      "compensation",
+      "ai_automation",
+      "location",
+      "skills",
+      "experience",
+      "remote"
+    ],
+    "gaps": [],
+    "opportunity_id": "7eeb69b078b9e228",
+    "status_history": [
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T15:29:18.008578+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:07.648129+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:42.371674+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:09:56.106697+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:20.063316+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:52.583642+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T01:13:23.827386+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T16:21:27.573219+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T03:20:32.805279+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T17:42:00.563049+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-15T19:59:37.808486+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-16T04:20:09.595256+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T02:14:46.228841+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T12:03:57.735771+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T19:39:01.915086+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-18T17:56:08.607784+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T00:31:24.060979+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T19:59:51.250531+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T01:12:34.995788+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T14:25:04.292600+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T20:34:11.379949+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T21:25:44.087324+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T03:35:22.083111+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T09:35:26.054591+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T16:29:52.904803+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T22:29:54.489277+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T04:29:56.482941+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T11:32:34.289723+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T17:50:09.742659+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T23:50:11.237248+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T05:50:13.386498+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T12:15:00.095370+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T20:26:34.164499+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T05:01:04.896644+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T11:44:46.667058+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T17:44:51.517918+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T23:44:57.763691+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T05:49:25.745535+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T11:49:29.066042+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T17:49:31.213025+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T04:15:30.951797+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T14:31:53.495939+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T20:31:57.665188+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T23:27:40.179751+00:00"
+      }
+    ],
+    "fit_score": 90,
+    "priority": "PRIORIDADE MÁXIMA",
+    "freshness": "NOVÍSSIMA",
+    "scored_at": "2026-08-26T23:27:40.229645+00:00"
+  },
+  {
+    "company": "AI product company",
+    "role": "AI Product Specialist",
+    "location": "Remote - Americas",
+    "remote_type": "Remote",
+    "salary": "US$3,200–5,500/mo",
+    "currency": "USD",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Specialist&location=Remote",
+    "source": "seed",
+    "published_date": "2026-08-26T23:27:40.178661+00:00",
+    "discovered_date": "2026-08-26T23:27:40.178661+00:00",
+    "notes": "Boa aderência para profissionais com produto + IA.",
+    "status": "DISCOVERED",
+    "requirements": [],
+    "skills": [],
+    "matches": [
+      "seniority",
+      "compensation",
+      "location",
+      "skills",
+      "experience",
+      "remote"
+    ],
+    "gaps": [],
+    "opportunity_id": "69f7c4cf5fe2e126",
+    "status_history": [
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T15:29:18.008587+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:07.648144+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:42.371697+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:09:56.106728+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:20.063340+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:52.583669+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T01:13:23.827424+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T16:21:27.573232+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T03:20:32.805292+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T17:42:00.563062+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-15T19:59:37.808498+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-16T04:20:09.595268+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T02:14:46.228852+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T12:03:57.735789+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T19:39:01.915119+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-18T17:56:08.607796+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T00:31:24.061006+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T19:59:51.250543+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T01:12:34.995811+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T14:25:04.292656+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T20:34:11.379975+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T21:25:44.087382+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T03:35:22.083123+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T09:35:26.054603+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T16:29:52.904817+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T22:29:54.489290+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T04:29:56.482965+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T11:32:34.290023+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T17:50:09.742686+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T23:50:11.237264+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T05:50:13.386510+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T12:15:00.095382+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T20:26:34.164511+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T05:01:04.896666+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T11:44:46.667070+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T17:44:51.517938+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T23:44:57.763703+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T05:49:25.745548+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T11:49:29.066054+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T17:49:31.213037+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T04:15:30.951837+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T14:31:53.495951+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T20:31:57.665220+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T23:27:40.179776+00:00"
+      }
+    ],
+    "fit_score": 77,
+    "priority": "BOA",
+    "freshness": "NOVÍSSIMA",
+    "scored_at": "2026-08-26T23:27:40.231447+00:00"
+  },
+  {
+    "company": "Consultoria digital / implementação",
+    "role": "AI Consultant",
+    "location": "Remote - Internacional",
+    "remote_type": "Remote",
+    "salary": "USD 80–150/hora or project-based",
+    "currency": "USD",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Consultant&location=Remote",
+    "source": "seed",
+    "published_date": "2026-08-26T23:27:40.178661+00:00",
+    "discovered_date": "2026-08-26T23:27:40.178661+00:00",
+    "notes": "Alto potencial para freelance/part-time/async.",
+    "status": "DISCOVERED",
+    "requirements": [],
+    "skills": [],
+    "matches": [
+      "seniority",
+      "compensation",
+      "location",
+      "skills",
+      "remote"
+    ],
+    "gaps": [],
+    "opportunity_id": "b053bd4c423c9883",
+    "status_history": [
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T15:29:18.008595+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:07.648159+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:07:42.371719+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:09:56.106754+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:20.063364+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-12T16:11:52.583702+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T01:13:23.827449+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-13T16:21:27.573245+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T03:20:32.805305+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-14T17:42:00.563074+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-15T19:59:37.808510+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-16T04:20:09.595281+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T02:14:46.228864+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T12:03:57.735803+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-17T19:39:01.915144+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-18T17:56:08.607816+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T00:31:24.061030+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-19T19:59:51.250555+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T01:12:34.995834+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T14:25:04.292732+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T20:34:11.379998+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-20T21:25:44.087433+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T03:35:22.083136+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T09:35:26.054616+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T16:29:52.904831+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-21T22:29:54.489304+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T04:29:56.482989+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T11:32:34.290058+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T17:50:09.743029+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-22T23:50:11.237278+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T05:50:13.386522+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T12:15:00.095400+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-23T20:26:34.164523+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T05:01:04.896687+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T11:44:46.667082+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T17:44:51.517959+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-24T23:44:57.763715+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T05:49:25.745560+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T11:49:29.066071+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-25T17:49:31.213050+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T04:15:30.951882+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T14:31:53.495964+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T20:31:57.665234+00:00"
+      },
+      {
+        "status": "DISCOVERED",
+        "at": "2026-08-26T23:27:40.179806+00:00"
+      }
+    ],
+    "fit_score": 62,
+    "priority": "SECUNDÁRIA",
+    "freshness": "NOVÍSSIMA",
+    "scored_at": "2026-08-26T23:27:40.231604+00:00"
+  }
+]

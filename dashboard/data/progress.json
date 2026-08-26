@@ -1,0 +1,11 @@
+[
+  {
+    "song_id": "deus-esta-perto",
+    "status": "learning",
+    "practice_minutes": 12,
+    "max_bpm": 72,
+    "mastered_sections": ["INTRO"],
+    "difficult_parts": "SOLO 3:00-3:35",
+    "last_practice": "2026-08-12T00:00:00Z"
+  }
+]

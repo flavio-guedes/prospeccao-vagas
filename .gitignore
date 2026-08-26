@@ -1,0 +1,28 @@
+# Dados gerados — podem ser versionados ou excluídos conforme política
+data/seed_opportunities.json
+data/opportunities.json
+data/scored_opportunities.json
+data/applications.json
+data/history.json
+data/sources.json
+reports/daily/*
+reports/weekly/*
+reports/monthly/*
+
+# Logs locais
+*.log
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Node/npm
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db

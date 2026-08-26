@@ -1,0 +1,118 @@
+{
+  "candidate": {
+    "name": "Flávio Guedes",
+    "linkedin": "https://www.linkedin.com/in/fl%C3%A1vio-guedes/",
+    "email": "flavioguedesmkt@gmail.com",
+    "positions": [
+      "AI Automation Specialist",
+      "AI Automation Engineer",
+      "AI Operations Specialist",
+      "AI Ops Specialist",
+      "AI Agent Specialist",
+      "Agentic AI Specialist",
+      "AI Workflow Automation Specialist",
+      "AI Solutions Specialist",
+      "AI Implementation Specialist",
+      "AI Workflow Specialist",
+      "Creative Technologist",
+      "AI Creative Technologist",
+      "Design Automation Specialist",
+      "AI Creative Director",
+      "AI Product Specialist",
+      "AI Product Designer",
+      "AI UX Designer",
+      "Conversational UX Designer",
+      "Marketing Automation Specialist",
+      "AI Consultant",
+      "Creative Operations Manager",
+      "Brand Operations",
+      "Digital Transformation Specialist",
+      "AI Transformation Specialist"
+    ],
+    "location_preference": [
+      "Remote internacional",
+      "LATAM remoto",
+      "EUA/Canadá remoto",
+      "Europa remoto",
+      "Brasil remoto"
+    ],
+    "model_preference": [
+      "Remote-first",
+      "Async",
+      "International",
+      "Freelance",
+      "Contract",
+      "Part-time",
+      "Full-time remoto"
+    ],
+    "currency_preference": ["USD", "EUR"],
+    "monthly_reference_range_usd": [3000, 5000],
+    "avoid": [
+      "Presencial obrigatório",
+      "Relocation obrigatório",
+      "ML Engineer puro",
+      "Data Scientist puro",
+      "Backend Engineer tradicional",
+      "Pesquisa acadêmica em ML",
+      "Nível técnico acima do perfil"
+    ]
+  },
+  "fit_score": {
+    "skills_weight": 0.30,
+    "experience_weight": 0.20,
+    "ai_automation_agents_weight": 0.15,
+    "remote_compatibility_weight": 0.10,
+    "compensation_weight": 0.10,
+    "location_weight": 0.05,
+    "seniority_weight": 0.05,
+    "strategic_value_weight": 0.05
+  },
+  "freshness": {
+    "new": 24,
+    "recent": 72,
+    "active": 168,
+    "old": 336
+  },
+  "statuses": [
+    "DISCOVERED",
+    "ANALYZED",
+    "HIGH_PRIORITY",
+    "SAVED",
+    "READY",
+    "APPLIED",
+    "FOLLOW_UP",
+    "INTERVIEW",
+    "OFFER",
+    "REJECTED",
+    "EXPIRED",
+    "BLOCKED"
+  ],
+  "notification": {
+    "macos": true,
+    "fit_high_threshold": 90,
+    "fit_strategic_threshold": 80,
+    "events": [
+      "FIT >= 90",
+      "FIT >= 80 + estratégico",
+      "candidatura pronta",
+      "resposta recebida",
+      "entrevista",
+      "mudança de status"
+    ]
+  },
+  "collection": {
+    "interval_hours": 6,
+    "incremental": true,
+    "reports": {
+      "daily": true,
+      "weekly": true,
+      "monthly": true
+    }
+  },
+  "storage": {
+    "data_dir": "data",
+    "reports_dir": "reports",
+    "scripts_dir": "scripts",
+    "dashboard_dir": "dashboard"
+  }
+}

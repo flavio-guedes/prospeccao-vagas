@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Radar — Career OS</title>
+<style>
+:root{--bg:#f5f6fb;--surface:#fff;--border:rgba(0,0,0,0.07);--text:#0f1120;--text2:#3a3f60;--text3:#737aa0;--violet:#7c3aed;--violet2:#8b5cf6;--blue:#2563eb;--green:#059669;--amber:#d97706;--coral:#e11d48;--r:12px;--sh:0 2px 12px rgba(0,0,0,0.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--text);padding:24px}
+.wrap{max-width:1200px;margin:0 auto}
+.h1{font-family:"Syne",system-ui,sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-bottom:4px}
+.sub{font-size:12px;color:var(--text3);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--sh)}
+.card .k{font-size:11px;color:var(--text3);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
+.card .v{font-size:26px;font-weight:800;letter-spacing:-0.03em}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;font-size:12px;font-weight:600;transition:all .18s}
+.btn:hover{background:#f7f8fe;border-color:rgba(0,0,0,0.12);transform:translateY(-1px)}
+.btn-primary{background:var(--violet);border-color:var(--violet);color:#fff}
+.btn-primary:hover{background:#7c3aed;border-color:#7c3aed;color:#fff}
+.btn-amber{background:var(--amber);border-color:var(--amber);color:#fff}
+.btn-amber:hover{background:#d97706;border-color:#d97706;color:#fff}
+.section{display:none}
+.section.active{display:block}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tab{padding:8px 14px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;font-size:12px;font-weight:600}
+.tab.active{background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.35);color:var(--violet)}
+.table{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:auto;box-shadow:var(--sh)}
+.table table{width:100%;border-collapse:collapse;min-width:900px}
+.table th,.table td{padding:12px 14px;font-size:12px;text-align:left;border-bottom:1px solid var(--border)}
+.table th{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text3);background:#f7f8fe}
+.badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap;display:inline-block}
+.b-blue{background:rgba(37,99,235,0.1);color:var(--blue);border:1px solid rgba(37,99,235,0.2)}
+.b-violet{background:rgba(124,58,237,0.1);color:var(--violet);border:1px solid rgba(124,58,237,0.2)}
+.b-green{background:rgba(5,150,105,0.1);color:var(--green);border:1px solid rgba(5,150,105,0.2)}
+.b-amber{background:rgba(217,119,6,0.1);color:var(--amber);border:1px solid rgba(217,119,6,0.2)}
+.empty{text-align:center;padding:60px 20px;color:var(--text3)}
+.history{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-top:14px;box-shadow:var(--sh)}
+.history .t{font-family:"Syne",system-ui,sans-serif;font-size:13px;font-weight:800;margin-bottom:8px}
+.footer{font-size:10px;color:var(--text3);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="h1">Job Radar</div>
+  <div class="sub">Coleta pública de vagas e contatos explícitos para recrutamento/candidatura. Sem inferência, sem bypass, sem e-mails inventados.</div>
+
+  <div class="grid">
+    <div class="card"><div class="k">MARKETING</div><div class="v" id="kpi-mkt">0</div><div class="footer" id="kpi-mkt-email">0 com e-mail</div></div>
+    <div class="card"><div class="k">PRODUTO</div><div class="v" id="kpi-prod">0</div><div class="footer" id="kpi-prod-email">0 com e-mail</div></div>
+    <div class="card"><div class="k">DESIGN</div><div class="v" id="kpi-design">0</div><div class="footer" id="kpi-design-email">0 com e-mail</div></div>
+    <div class="card"><div class="k">IA</div><div class="v" id="kpi-ia">0</div><div class="footer" id="kpi-ia-email">0 com e-mail</div></div>
+    <div class="card"><div class="k">TOTAL</div><div class="v" id="kpi-total">0</div><div class="footer" id="kpi-total-email">0 com e-mail</div></div>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn btn-primary" onclick="runCollect()">Coletar vagas</button>
+    <button class="btn btn-amber" onclick="generateSelected()">Gerar lote</button>
+    <select class="btn" id="batch-size"><option value="200">Lote: 200</option><option value="100">Lote: 100</option></select>
+    <select class="btn" id="location"><option value="Rio de Janeiro">Local: Rio de Janeiro</option><option value="Brasil">Local: Brasil</option><option value="Remote">Remoto</option></select>
+    <span style="margin-left:auto;font-size:11px;color:var(--text3)" id="status">Pronto</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showCategory('TODOS')">TODOS</button>
+    <button class="tab" onclick="showCategory('MARKETING')">MARKETING</button>
+    <button class="tab" onclick="showCategory('PRODUTO')">PRODUTO</button>
+    <button class="tab" onclick="showCategory('DESIGN')">DESIGN</button>
+    <button class="tab" onclick="showCategory('IA')">IA</button>
+  </div>
+
+  <div class="section active" id="section-TODOS">
+    <div class="table"><table>
+      <thead><tr><th></th><th>Área</th><th>Empresa</th><th>Cargo</th><th>Local</th><th>Data</th><th>E-mail</th><th>Fonte</th><th>Contato</th><th>URL</th></tr></thead>
+      <tbody id="table-TODOS"></tbody>
+    </table></div>
+  </div>
+  <div class="section" id="section-MARKETING"><div class="table"><table><thead><tr><th></th><th>Área</th><th>Empresa</th><th>Cargo</th><th>Local</th><th>Data</th><th>E-mail</th><th>Fonte</th><th>Contato</th><th>URL</th></tr></thead><tbody id="table-MARKETING"></tbody></table></div></div>
+  <div class="section" id="section-PRODUTO"><div class="table"><table><thead><tr><th></th><th>Área</th><th>Empresa</th><th>Cargo</th><th>Local</th><th>Data</th><th>E-mail</th><th>Fonte</th><th>Contato</th><th>URL</th></tr></thead><tbody id="table-PRODUTO"></tbody></table></div></div>
+  <div class="section" id="section-DESIGN"><div class="table"><table><thead><tr><th></th><th>Área</th><th>Empresa</th><th>Cargo</th><th>Local</th><th>Data</th><th>E-mail</th><th>Fonte</th><th>Contato</th><th>URL</th></tr></thead><tbody id="table-DESIGN"></tbody></table></div></div>
+  <div class="section" id="section-IA"><div class="table"><table><thead><tr><th></th><th>Área</th><th>Empresa</th><th>Cargo</th><th>Local</th><th>Data</th><th>E-mail</th><th>Fonte</th><th>Contato</th><th>URL</th></tr></thead><tbody id="table-IA"></tbody></table></div></div>
+
+  <div class="history">
+    <div class="t">Histórico de lotes</div>
+    <div id="batch-history">Nenhum lote gerado.</div>
+  </div>
+</div>
+
+<script>
+let currentCategory='TODOS';
+let rawData={MARKETING:[],PRODUTO:[],DESIGN:[],IA:[]};
+
+async function runCollect(){
+  const status=document.getElementById('status');
+  status.textContent='Coletando...';
+  try{
+    const res=await fetch('/api/job-radar/collect',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:document.getElementById('location').value})});
+    if(!res.ok) throw new Error('Falha na coleta');
+    const data=await res.json();
+    rawData=data.results||rawData;
+    renderAll();
+    status.textContent='Coleta concluída.';
+  }catch(e){
+    status.textContent='Erro na coleta: '+e.message;
+  }
+}
+
+function renderAll(){
+  const all=[];
+  for(const [area,items] of Object.entries(rawData)){
+    all.push(...items.map(it=>({...it,area}));
+  }
+  renderTable('TODOS', all);
+  for(const area of Object.keys(rawData)){
+    renderTable(area, rawData[area]||[]);
+  }
+  updateKPIs();
+}
+
+function updateKPIs(){
+  const all=[].concat(...Object.values(rawData));
+  const kpis={MARKETING:['kpi-mkt','kpi-mkt-email'],PRODUTO:['kpi-prod','kpi-prod-email'],DESIGN:['kpi-design','kpi-design-email'],IA:['kpi-ia','kpi-ia-email']};
+  const totals={count:all.length,email:all.filter(x=>x.email).length};
+  for(const [area,[cId,eId]] of Object.entries(kpis)){
+    const items=rawData[area]||[];
+    document.getElementById(cId).textContent=items.length;
+    document.getElementById(eId).textContent=(items.filter(x=>x.email).length)+' com e-mail';
+  }
+  document.getElementById('kpi-total').textContent=totals.count;
+  document.getElementById('kpi-total-email').textContent=(totals.email)+' com e-mail';
+}
+
+function renderTable(area, items){
+  const tbody=document.getElementById('table-'+area);
+  if(!tbody) return;
+  if(!items.length){
+    tbody.innerHTML='<tr><td colspan="10"><div class="empty">Nenhum contato encontrado para esta categoria.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML=items.map((c,idx)=>`
+    <tr>
+      <td><input type="checkbox" class="sel" data-index="${idx}" data-area="${area}"></td>
+      <td><span class="badge ${area==='MARKETING'?'b-blue':area==='PRODUTO'?'b-violet':area==='DESIGN'?'b-green':'b-amber'}">${c.area||area}</span></td>
+      <td>${c.company||'—'}</td>
+      <td>${c.role||'—'}</td>
+      <td>${c.location||'—'}</td>
+      <td>${c.published_date||'—'}</td>
+      <td>${c.email||'—'}</td>
+      <td>${c.source||'—'}</td>
+      <td><span class="badge ${c.contact_type==='email'?'b-blue':'b-gray'}">${c.contact_type||'email'}</span></td>
+      <td><a href="${c.job_url||'#'}" target="_blank">abrir</a></td>
+    </tr>
+  `).join('');
+}
+
+function showCategory(cat){
+  currentCategory=cat;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.textContent===cat));
+  document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id==='section-'+cat));
+}
+
+function generateSelected(){
+  const batchSize=parseInt(document.getElementById('batch-size').value,10)||200;
+  const checked=[];
+  document.querySelectorAll('.sel:checked').forEach(el=>{
+    const area=el.dataset.area;
+    const idx=parseInt(el.dataset.index,10);
+    const c=(rawData[area]||[])[idx];
+    if(c) checked.push({...c,area});
+  });
+  if(!checked.length){
+    alert('Selecione ao menos um contato.');
+    return;
+  }
+  const batches=[];
+  for(let i=0;i<checked.length;i+=batchSize){
+    const chunk=checked.slice(i,i+batchSize);
+    const batchId=`${currentCategory} #${String(Math.floor(i/batchSize)+1).padStart(3,'0')}`;
+    batches.push({batch_id:batchId,area:currentCategory,count:len(chunk),contacts:chunk});
+  }
+  fetch('/api/job-radar/batch',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({batches})}).then(r=>r.json()).then(data=>{
+    alert('Lotes gerados: '+data.batches.length);
+    renderHistory();
+  }).catch(()=>{});
+}
+
+async function renderHistory(){
+  const el=document.getElementById('batch-history');
+  try{
+    const res=await fetch('/api/job-radar/history');
+    const data=await res.json();
+    if(!data.length){el.textContent='Nenhum lote gerado.';return;}
+    el.innerHTML='<table><thead><tr><th>Lote</th><th>Categoria</th><th>Qtd</th><th>Status</th><th>Data</th></tr></thead><tbody>'+data.map(b=>`<tr><td>${b.batch_id}</td><td>${b.area}</td><td>${b.count}</td><td>${b.status}</td><td>${b.created_at}</td></tr>`).join('')+'</tbody></table>';
+  }catch(e){}
+}
+
+showCategory('TODOS');
+</script>
+</body>
+</html>

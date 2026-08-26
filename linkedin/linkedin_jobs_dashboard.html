@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LinkedIn Job Hunter — Flavio Guedes</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --surface: #161b22;
+    --border: #1f2630;
+    --muted: #8b949e;
+    --text: #e6edf3;
+    --accent: #d4a843;
+    --accent2: #f0c66e;
+    --tag-bg: #1f2630;
+    --tag-text: #d4a843;
+    --link: #58a6ff;
+    --score-ex: #3fb950;
+    --score-high: #58a6ff;
+    --score-mid: #d29922;
+    --score-low: #8b949e;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, sans-serif;
+    background:
+      radial-gradient(1200px 800px at 20% -10%, rgba(212,168,67,0.12), transparent),
+      radial-gradient(1200px 800px at 120% 20%, rgba(88,166,255,0.10), transparent),
+      var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  header, main, footer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 18px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(28px, 2.2vw, 38px);
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    background: linear-gradient(180deg, #fff 0%, #d4a843 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .sub {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .kpis {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .kpi .label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .kpi .value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .toolbar {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+  }
+
+  .toolbar-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .toolbar label {
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 160px;
+    flex: 1 1 160px;
+  }
+
+  .toolbar input, .toolbar select {
+    background: #0f1115;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    outline: none;
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    align-items: end;
+  }
+
+  button.primary, button.secondary {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  button.primary {
+    background: linear-gradient(180deg, #f0c66e 0%, #d4a843 100%);
+    color: #0f1115;
+  }
+
+  button.secondary {
+    background: #0f1115;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .grid {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+  }
+
+  .score {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    padding: 6px 8px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 13px;
+    color: #0f1115;
+    background: #8b949e;
+  }
+
+  .score.ex { background: var(--score-ex); }
+  .score.high { background: var(--score-high); }
+  .score.mid { background: var(--score-mid); }
+  .score.low { background: var(--score-low); }
+
+  .title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .desc {
+    color: #cdd6e0;
+    font-size: 13.5px;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .author, .connection {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .connection.connected {
+    color: var(--score-ex);
+  }
+
+  .links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+
+  .links a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #0f1115;
+  }
+
+  .links a:hover {
+    border-color: #58a6ff;
+  }
+
+  .empty {
+    margin-top: 18px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  footer {
+    color: var(--muted);
+    font-size: 12px;
+    padding-top: 6px;
+    padding-bottom: 34px;
+  }
+
+  @media (max-width: 640px) {
+    .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>LinkedIn Job Hunter</h1>
+    <div class="sub">Busca autenticada — flavioguedesmkt@gmail.com</div>
+  </div>
+  <div class="kpis" id="kpis">
+    <div class="kpi">
+      <div class="label">Total encontrado</div>
+      <div class="value" id="kpi-total">0</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Alta aderência</div>
+      <div class="value" id="kpi-high">0</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Rio / Remoto</div>
+      <div class="value" id="kpi-rio-remote">0</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Publicadas por conexões</div>
+      <div class="value" id="kpi-conn">0</div>
+    </div>
+  </div>
+  <div class="toolbar">
+    <div class="toolbar-row">
+      <label>
+        <span>Score mínimo</span>
+        <input id="f-score" type="number" min="0" max="100" value="0" />
+      </label>
+      <label>
+        <span>Localização</span>
+        <input id="f-location" placeholder="ex: Rio de Janeiro" />
+      </label>
+      <label>
+        <span>Modalidade</span>
+        <select id="f-modality">
+          <option value="">Todas</option>
+          <option value="Remoto">Remoto</option>
+          <option value="Híbrido">Híbrido</option>
+          <option value="Presencial">Presencial</option>
+        </select>
+      </label>
+      <label>
+        <span>Empresa</span>
+        <input id="f-company" placeholder="Filtrar por empresa" />
+      </label>
+      <label>
+        <span>Área</span>
+        <input id="f-area" placeholder="ex: Criatividade, Produto, IA" />
+      </label>
+      <label>
+        <span>Conexão</span>
+        <select id="f-connection">
+          <option value="">Qualquer</option>
+          <option value="1ST">Conexão de 1º grau</option>
+          <option value="UNKNOWN">Desconhecido</option>
+        </select>
+      </label>
+      <label>
+        <span>Data a partir de</span>
+        <input id="f-date" type="date" />
+      </label>
+    </div>
+    <div class="actions">
+      <button class="secondary" onclick="resetFilters()">Limpar filtros</button>
+      <button class="secondary" onclick="window.print()">Salvar/Imprimir</button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none;">Nenhuma oportunidade encontrada para os filtros atuais.</div>
+</main>
+<footer>
+  Módulo: LinkedIn Job Hunter — Painel local, leitura apenas, sem envio ou ação social.
+</footer>
+<script>
+  const jobs = [];
+  fetch(window.location.href.replace('linkedin_jobs_dashboard.html','linkedin_jobs.json'), {cache:'no-store'})
+    .then(r => r.json())
+    .then(data => {
+      if (Array.isArray(data)) data.forEach(j => jobs.push(j));
+    })
+    .catch(() => {});
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+
+  function badgeClass(s) {
+    if (s >= 90) return 'ex';
+    if (s >= 75) return 'high';
+    if (s >= 60) return 'mid';
+    return 'low';
+  }
+
+  function tierText(s) {
+    if (s >= 90) return 'EXCELENTE';
+    if (s >= 75) return 'ALTA';
+    if (s >= 60) return 'MÉDIA';
+    return 'BAIXA';
+  }
+
+  function connectionText(c) {
+    if (!c) return 'UNKNOWN';
+    return c;
+  }
+
+  function matches(item) {
+    const score = Number(document.getElementById('f-score').value || 0);
+    const location = document.getElementById('f-location').value.trim().toLowerCase();
+    const modality = document.getElementById('f-modality').value;
+    const company = document.getElementById('f-company').value.trim().toLowerCase();
+    const area = document.getElementById('f-area').value.trim().toLowerCase();
+    const connection = document.getElementById('f-connection').value;
+    const dateFrom = document.getElementById('f-date').value;
+
+    if ((item.score || 0) < score) return false;
+    if (location && !String(item.location || '').toLowerCase().includes(location)) return false;
+    if (modality && String(item.modality || '').toLowerCase() !== modality.toLowerCase()) return false;
+    if (company && !String(item.company || '').toLowerCase().includes(company)) return false;
+    if (connection && String(item.connection_status || '').toUpperCase() !== connection) return false;
+
+    const text = [item.title, item.company, item.location, item.modality, item.description, item.why_relevant].join(' ').toLowerCase();
+    if (area && !text.includes(area)) return false;
+
+    if (dateFrom && item.date) {
+      const d = new Date(item.date);
+      const from = new Date(dateFrom);
+      if (isNaN(d.getTime()) || d.getTime() < from.getTime()) return false;
+    }
+
+    return true;
+  }
+
+  function card(item) {
+    const score = Number(item.score || 0);
+    const bc = badgeClass(score);
+    const tier = tierText(score);
+    const conn = connectionText(item.connection_status);
+    const isConnected = /1ST|1º GRAU|CONNECTION/i.test(conn || '');
+
+    const hasPost = /^https?:\/\//i.test(item.post_url || '');
+    const hasJob = /^https?:\/\//i.test(item.job_url || '');
+
+    return `
+      <article class="card">
+        <div class="top">
+          <div>
+            <div class="title">${escapeHtml(item.title || 'Sem título')}</div>
+            <div class="meta">
+              <span>${escapeHtml(item.company || '—')}</span>
+              <span>•</span>
+              <span>${escapeHtml(item.location || '—')}</span>
+              <span>•</span>
+              <span>${escapeHtml(item.modality || '—')}</span>
+            </div>
+            <div class="meta" style="margin-top:6px;">
+              <span class="tag">Score ${score} · ${tier}</span>
+              ${item.date ? `<span class="tag">${escapeHtml(String(item.date))}</span>` : ''}
+              ${isConnected ? '<span class="tag">🤝 Conexão de 1º grau</span>' : ''}
+            </div>
+          </div>
+          <div class="score ${bc}">${score}</div>
+        </div>
+        <div class="author">👤 ${escapeHtml(item.author || '—')}${item.author_role ? ' · ' + escapeHtml(item.author_role) : ''}</div>
+        <div class="connection ${isConnected ? 'connected' : ''}">🤝 ${escapeHtml(conn)}</div>
+        ${item.description ? `<div class="desc">${escapeHtml(item.description)}</div>` : ''}
+        <div class="desc">💡 ${escapeHtml(item.why_relevant || 'Relevância avaliada pelo modelo de scoring.')}</div>
+        <div class="links">
+          ${hasPost ? `<a href="${escapeHtml(item.post_url)}" target="_blank" rel="noopener noreferrer">VER PUBLICAÇÃO</a>` : ''}
+          ${hasJob ? `<a href="${escapeHtml(item.job_url)}" target="_blank" rel="noopener noreferrer">VER VAGA</a>` : ''}
+        </div>
+      </article>
+    `;
+  }
+
+  function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function render() {
+    const filtered = jobs.filter(matches);
+    filtered.sort((a,b) => {
+      const sa = Number(a.score||0), sb = Number(b.score||0);
+      if (sb !== sa) return sb - sa;
+      const ca = String(a.connection_status||'').toUpperCase();
+      const cb = String(b.connection_status||'').toUpperCase();
+      if (ca !== cb) return ca.localeCompare(cb);
+      return String(b.date||'').localeCompare(String(a.date||''));
+    });
+
+    grid.innerHTML = filtered.map(card).join('');
+    empty.style.display = filtered.length ? 'none' : 'block';
+
+    document.getElementById('kpi-total').textContent = jobs.length;
+    document.getElementById('kpi-high').textContent = jobs.filter(i => (Number(i.score||0) >= 75)).length;
+    document.getElementById('kpi-rio-remote').textContent = jobs.filter(i => /rio|remoto|remote/i.test(`${i.location||''} ${i.modality||''}`)).length;
+    document.getElementById('kpi-conn').textContent = jobs.filter(i => /1ST|1º GRAU|CONNECTION/i.test(String(i.connection_status||''))).length;
+  }
+
+  function resetFilters() {
+    document.getElementById('f-score').value = '0';
+    document.getElementById('f-location').value = '';
+    document.getElementById('f-modality').value = '';
+    document.getElementById('f-company').value = '';
+    document.getElementById('f-area').value = '';
+    document.getElementById('f-connection').value = '';
+    document.getElementById('f-date').value = '';
+    render();
+  }
+
+  document.querySelectorAll('#f-score,#f-location,#f-modality,#f-company,#f-area,#f-connection,#f-date').forEach(el => el.addEventListener('input', render));
+  render();
+</script>
+</body>
+</html>

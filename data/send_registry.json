@@ -1,0 +1,42 @@
+[
+  {
+    "send_id": "20260816051522-001",
+    "date": "2026-08-16T05:15:22.926776+00:00",
+    "recipient": "teste@empresa.com",
+    "company": "Tech",
+    "job": "Product Manager",
+    "cv_id": "1mXz80x8jyG5F-OpmcYVE9fdB3rHUWK7M",
+    "cv_name": "Produtor Audiovisual - Flávio Guedes.pdf",
+    "portfolio_url": "https://flavio-guedes.github.io/portfolio/links.html",
+    "subject": "Candidatura — Product Manager",
+    "message": "Olá, estou interessado em na Tech para a posição Product Manager. Tenho perfil alinhado a produto e utilizei o CV Produtor Audiovisual - Flávio Guedes.pdf. Veja também meu portfólio: https://flavio-guedes.github.io/portfolio/links.html. Aguardo o próximo passo.",
+    "source": "job-radar",
+    "status": "prepared",
+    "followup_d3": "2026-08-19",
+    "followup_d7": "2026-08-23",
+    "outcome": "interview",
+    "responded": true,
+    "outcome_notes": "",
+    "outcome_at": "2026-08-16T05:15:22.928410+00:00"
+  },
+  {
+    "send_id": "20260816051614-001",
+    "date": "2026-08-16T05:16:14.435301+00:00",
+    "recipient": "teste@empresa.com",
+    "company": "Tech",
+    "job": "Product Manager",
+    "cv_id": "1mXz80x8jyG5F-OpmcYVE9fdB3rHUWK7M",
+    "cv_name": "Produtor Audiovisual - Flávio Guedes.pdf",
+    "portfolio_url": "https://flavio-guedes.github.io/portfolio/links.html",
+    "subject": "Candidatura — Product Manager",
+    "message": "Olá, estou interessado em na Tech para a posição Product Manager. Tenho perfil alinhado a produto e utilizei o CV Produtor Audiovisual - Flávio Guedes.pdf. Veja também meu portfólio: https://flavio-guedes.github.io/portfolio/links.html. Aguardo o próximo passo.",
+    "source": "job-radar",
+    "status": "prepared",
+    "followup_d3": "2026-08-19",
+    "followup_d7": "2026-08-23",
+    "outcome": "interview",
+    "responded": true,
+    "outcome_notes": "",
+    "outcome_at": "2026-08-16T05:16:14.437596+00:00"
+  }
+]
